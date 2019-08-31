@@ -10,9 +10,16 @@ namespace MoshIntermediate
     {
         static void Main(string[] args)
         {
-            var cookie = new HttpCookie();
-            cookie["name"] = "Tom";
-            Console.WriteLine(cookie["name"]);
+            var customer = new Customer();
+            customer.Id = 1;
+            customer.Name = "Tom";
+
+            var order = new Order();
+            customer.Orders.Add(order);
+
+            Console.WriteLine(customer.Id);
+            Console.WriteLine(customer.Name);
+
         }
     }
 }
