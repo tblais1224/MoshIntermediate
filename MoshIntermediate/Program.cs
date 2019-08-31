@@ -5,17 +5,27 @@ using System.Threading.Tasks;
 
 namespace MoshIntermediate
 {
+    public class Person
+    {
+        private DateTime _bithdate;
+
+        public void SetBirthdate(DateTime birthdate)
+        {
+            _bithdate = birthdate;
+        }
+
+        public DateTime GetBirthdate()
+        {
+            return _bithdate;
+        }
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            var customer = new Customer(1);
-            customer.Orders.Add(new Order());
-            customer.Orders.Add(new Order());
-
-
-
-            Console.WriteLine(customer.Orders.Count);
+            var person = new Person();
+            person.SetBirthdate(new DateTime(1996, 1, 12));
+            Console.WriteLine(person.GetBirthdate());
         }
     }
 }
