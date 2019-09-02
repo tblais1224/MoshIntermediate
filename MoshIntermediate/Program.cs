@@ -10,8 +10,15 @@ namespace MoshIntermediate
     {
         static void Main(string[] args)
         {
-            var person = new Person(new DateTime(1996, 1, 12));
-            Console.WriteLine(person.Age);
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            //tested ten second timer
+            do
+            {
+                Console.WriteLine(stopwatch.Stop());
+            } while (stopwatch.Stop() < TimeSpan.FromSeconds(10));
+
         }
     }
 }
