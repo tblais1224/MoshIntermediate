@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
@@ -13,14 +12,17 @@ namespace MoshIntermediate
     {
         static void Main(string[] args)
         {
-           var list = new ArrayList();
-           list.Add(1);
-           list.Add("tom");
-           list.Add(DateTime.Today);
-
-           var anotherList = new List<int>();
-           var names = new List<string>();
-           names.Add();
+            var stack = new Stack();
+            stack.Push(22);
+            stack.Push(true);
+            stack.Push("hi tom");
+            stack.Push(331544524);
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            stack.Clear();
+            //throws error handle
+            //stack.Pop();
         }
     }
 }
