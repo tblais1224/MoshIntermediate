@@ -1,14 +1,14 @@
-﻿namespace MoshIntermediate
+﻿using System;
+
+namespace MoshIntermediate
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var circle = new Circle();
-            circle.Draw();
-
-            var rectangle = new Rectangle();
-            rectangle.Draw();
+            var orderProcessor = new OrderProcessor(new ShippingCalculator());
+            var order = new Order { DatePlaced = DateTime.Now, TotalPrice = 100f };
+            orderProcessor.Process(order);
         }
     }
 }
